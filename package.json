@@ -1,0 +1,32 @@
+{
+  "name": "express-ts-template",
+  "version": "1.0.0",
+  "description": "template for express-typescript",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/index.js",
+    "lint": "eslint . --ext .ts",
+    "prettier-format": "prettier --config .prettierrc src/**/* --write"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonson139/express-ts-template.git"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.13",
+    "@typescript-eslint/parser": "^4.29.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {}
+}

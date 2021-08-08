@@ -1,0 +1,18 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "prettier"
+    ],
+    "extends": [
+        "prettier"
+    ],
+    "rules": { 
+        "no-console": 2,
+        "prettier/prettier": 2,
+        "no-empty-function": 2,
+        "no-void": 1,
+        "require-await": 1,
+        "no-await-in-loop": 1
+    }
+}
