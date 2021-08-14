@@ -9,7 +9,7 @@
     ],
     "rules": { 
         "no-console": 2,
-        "prettier/prettier": 2,
+        "prettier/prettier": 0,
         "no-empty-function": 2,
         "no-void": 1,
         "require-await": 1,
