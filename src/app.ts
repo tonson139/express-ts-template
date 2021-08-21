@@ -1,33 +1,45 @@
-import express, { Application } from "express";
+// import * as express from "express";
+// import { Request, Response } from "express";
+// import { createConnection } from "typeorm";
+// import { Photo } from "./entity/Photo";
 
-const app: Application = express();
+// // create typeorm connection
+// createConnection().then((connection) => {
+// 	const photoRepository = connection.getRepository(Photo);
 
-app.get("/ping", async (_req, res) => {
-	res.send({
-		message: "pong",
-	});
-});
+// 	// create and setup express app
+// 	const app = express();
+// 	app.use(express.json());
 
-import "reflect-metadata";
-import { createConnection } from "typeorm";
-import { Photo } from "./entity/Photo";
-import { User } from "./entity/User";
+// 	// register routes
 
-createConnection()
-	.then((connection) => {
-		let newPhoto = new Photo();
+// 	app.get("/photos", async function (req: Request, res: Response) {
+// 		const photos = await photoRepository.find();
+// 		res.json(photos);
+// 	});
 
-		newPhoto.name = "Me and Bears";
-		newPhoto.description = "I am near polar bears";
-		newPhoto.filename = "photo-with-bears.jpg";
-		newPhoto.views = 1;
-		newPhoto.isPublished = true;
-		console.log(newPhoto);
+// 	app.get("/photos/:id", async function (req: Request, res: Response) {
+// 		const results = await photoRepository.findOne(req.params.id);
+// 		return res.send(results);
+// 	});
 
-		return connection.manager.save(newPhoto).then((newPhoto) => {
-			console.log("Photo has been saved. Photo id is", newPhoto.id);
-		});
-	})
-	.catch((error) => console.log(error));
+// 	app.post("/photos", async function (req: Request, res: Response) {
+// 		const photo = await photoRepository.create(req.body);
+// 		const results = await photoRepository.save(photo);
+// 		return res.send(results);
+// 	});
 
-export default app;
+// 	app.put("/photos/:id", async function (req: Request, res: Response) {
+// 		const photo = await photoRepository.findOne(req.params.id);
+// 		photoRepository.merge(photo, req.body);
+// 		const results = await photoRepository.save(photo);
+// 		return res.send(results);
+// 	});
+
+// 	app.delete("/photos/:id", async function (req: Request, res: Response) {
+// 		const results = await photoRepository.delete(req.params.id);
+// 		return res.send(results);
+// 	});
+// });
+
+// export default app;
