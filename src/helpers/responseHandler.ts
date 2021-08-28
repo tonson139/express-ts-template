@@ -1,5 +1,5 @@
 import type { Response } from "express";
-import { RESPONSE_CODE, RESPONSE_STATUS } from "../constant/reponse";
+import { RESPONSE_CODE, RESPONSE_STATUS } from "../constants/reponse";
 
 export const responseHandler = (res: Response, responseData, type) => {
 	switch (type) {

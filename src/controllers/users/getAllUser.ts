@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
 import { getRepository } from "typeorm";
-import { User } from "../../entity/User";
-import { responseHandler } from "../../helper/responseHandler";
+import { User } from "../../models/entity/User";
+import { responseHandler } from "../../helpers/responseHandler";
 
 export const getAllUser = async (
 	req: Request,

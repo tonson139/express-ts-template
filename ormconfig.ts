@@ -15,9 +15,9 @@ const ormconfig = {
 	database,
 	synchronize: true,
 	logging: false,
-	entities: ["src/entity/**/*.ts"],
+	entities: ["src/models/entity/**/*.ts"],
 	cli: {
-		entitiesDir: "src/entity",
+		entitiesDir: "src/models/entity",
 	},
 };
 export default ormconfig;
