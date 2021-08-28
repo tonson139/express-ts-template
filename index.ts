@@ -1,11 +1,14 @@
 import startApp from "./src/app";
+import { appPort } from "./src/configs";
 
-const PORT = 8000;
-
-startApp().then((results) => {
-	const app = results;
-
-	app.listen(PORT, () => {
-		console.log(`app running on port = ${PORT}`);
+startApp()
+	.then((results) => {
+		const app = results;
+		app.listen(appPort, () => {
+			console.log(`app running on port = ${appPort}`);
+		});
+	})
+	.catch((error) => {
+		console.log(error);
+		process.exit(1);
 	});
-});

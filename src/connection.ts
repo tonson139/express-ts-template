@@ -1,4 +1,4 @@
-import { createConnection, getConnection } from "typeorm";
+import { createConnection } from "typeorm";
 
 const connectSql = async () => {
 	const connection = await createConnection();

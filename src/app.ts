@@ -1,17 +1,20 @@
 import express from "express";
 import type { Application } from "express";
 import connectSql from "./connection";
-import router from "./routers/users";
+import router from "./routers";
+import { consoleLogger } from "./helper/logger";
 
 const startApp = async (): Promise<Application> => {
 	const connection = await connectSql();
-	const app = express();
+	console.log(`Database connection: ${connection.isConnected}`);
+
+	const app: Application = express();
 	app.use(express.json());
-	console.log("start app");
-	if (connection.isConnected) {
-		console.log(connection.isConnected);
-		app.use("/", router);
-	}
+	app.use(express.urlencoded({ extended: true }));
+	app.use(consoleLogger);
+	app.use("/", router);
+	// app.use(errorHandler());
+
 	return app;
 };
 export default startApp;
