@@ -1,9 +1,14 @@
-minimun install to use expresss typescipt 
+# Foobar
+Minimun install to use expresss typescipt 
 
-
+#### Review 
 Review basicaaly when we use express with nodemon in dev 
+
+```
 npm i express, nodemon 
 mkdir src 
+```
+#### Project structure
 src/app.js
 package.json 
     "main": "./src/app.js",
@@ -12,15 +17,16 @@ package.json
     }
 
 
-with typescript 
-
+### With Typescript 
+```
 // for dev with typescript (using types) 
 npm i typescript, @types/node, @type/express, ts-node --save-dev
 
 // for using express 
 npm i express 
+``` 
 
-project structure
+#### Project structure
 src/app.ts
 index.ts 
 package.json
