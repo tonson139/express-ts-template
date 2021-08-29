@@ -1,10 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { ActivityRecord } from "./ActivityRecord";
 
 @Entity()
-export class User {
-	@PrimaryGeneratedColumn()
-	id: number;
-
+export class User extends ActivityRecord {
 	@Column()
 	firstName: string;
 

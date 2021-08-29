@@ -1,15 +1,21 @@
 import type { Request, Response } from "express";
+import { responseHandler } from "../../helpers/responseHandler";
+import { getRepository } from "typeorm";
+import { User } from "../../models/entity/User";
 
 export const getOneUser = async (
 	req: Request,
 	res: Response
 ): Promise<Response> => {
-	console.log("getOneUser");
-	for (let x in req.params) {
-		console.log(x);
-	}
-	const mockdata = `This is getOneuse id: ${req.params.id}`;
-	return res.status(200).json({
-		data: mockdata,
-	});
+	const { id } = req.params;
+
+	const userRepository = getRepository(User);
+	const [users, count] = await userRepository.findByIds([id]);
+
+	let responseData = {
+		data: [users],
+		count: [users].length,
+	};
+
+	return responseHandler(res, responseData, 200);
 };

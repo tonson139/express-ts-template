@@ -2,9 +2,12 @@
     "compilerOptions": {
       "target": "ES6",
       "module": "CommonJS",
-      "baseUrl": ".",
       "outDir": "./dist", 
       "rootDir": "./src", 
+      "baseUrl": ".",
+      // "paths": {
+      //   "@helpers/*": ["src/helpers/*"]
+      // },
       /* Experimental Options */
       "experimentalDecorators": true, 
       "emitDecoratorMetadata": true, 
